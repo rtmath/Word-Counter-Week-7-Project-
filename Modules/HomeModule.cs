@@ -2,7 +2,7 @@ using Nancy;
 using System.Collections.Generic;
 using Counter;
 
-namespace EnterNamespaceHere //replace with your desired namespace
+namespace ModuleNamespace
 {
   public class HomeModule : NancyModule
   {

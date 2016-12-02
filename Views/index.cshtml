@@ -8,11 +8,12 @@
   <body>
     <div class="container centered">
       <div class="col-md-2">
-
       </div>
       <div class="col-md-8">
         <div class="well" id="header">
-          <h3>Word Counter</h3>
+          <h2>Word Counter</h2>
+          <p>Enter a word in the first field and a sentence in the second field.</p>
+          <p>The program will tell you how many instances of your word are in the sentence.</p>
         </div>
         <div class="well">
           <form action="/submit" method="post">
@@ -26,13 +27,11 @@
         @if (Model != null)
         {
         <div class="well">
-          <h2>Result:</h2>
-          <span>"@Model.GetWord()" occurs in "@Model.GetString()" @Model.GetOccurences() times.</span>
+          <h4>"@Model.GetWord()" occurs in "@Model.GetString()" @Model.GetOccurences() @if (Model.GetOccurences() == 1) {<span>time.</span>} else {<span>times.</span>}</h4>
         </div>
         }
     </div>
     <div class="col-md-2">
-
     </div>
   </body>
 </html>
