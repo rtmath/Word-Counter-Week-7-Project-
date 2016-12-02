@@ -10,14 +10,14 @@ namespace TestingGrounds
     public void Test1_WordContains_True()
     {
       RepeatCounter testCounter = new RepeatCounter("too", "tool");
-      Assert.Equal(true, testCounter.ContainsWord());
+      Assert.Equal(true, testCounter.StringContainsWord());
     }
 
     [Fact]
     public void Test2_WordContains_True()
     {
       RepeatCounter testCounter = new RepeatCounter("cat", "dog");
-      Assert.Equal(false, testCounter.ContainsWord());
+      Assert.Equal(false, testCounter.StringContainsWord());
     }
 
     //Test for second spec
@@ -29,7 +29,7 @@ namespace TestingGrounds
     public void Test3_WordContainsWithDifferentCases_True(string input1, string input2)
     {
       RepeatCounter testCounter = new RepeatCounter(input1, input2);
-      Assert.Equal(true, testCounter.ContainsWord());
+      Assert.Equal(true, testCounter.StringContainsWord());
     }
 
     [Theory]
@@ -39,7 +39,7 @@ namespace TestingGrounds
     public void Test4_CheckOccurences_ReturnOccurences(string input1, string input2, int occurences)
     {
       RepeatCounter testCounter = new RepeatCounter(input1, input2);
-      Assert.Equal(occurences, testCounter.CounterRepeats());
+      Assert.Equal(occurences, testCounter.CountRepeats());
     }
   }
 }

@@ -1,5 +1,6 @@
 using Nancy;
 using System.Collections.Generic;
+using Counter;
 
 namespace EnterNamespaceHere //replace with your desired namespace
 {
@@ -8,7 +9,11 @@ namespace EnterNamespaceHere //replace with your desired namespace
     public HomeModule()
     {
       Get["/"] = _ => View["index.cshtml"];
-      //Insert your GETs and POSTs here
+      Post["/submit"] = _ =>
+      {
+        RepeatCounter newCounter = new RepeatCounter(Request.Form["word"], Request.Form["sentence"]);
+        return View["index.cshtml", newCounter];
+      };
     }
   }
 }
