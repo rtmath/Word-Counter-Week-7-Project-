@@ -8,6 +8,7 @@ namespace Counter
     private string _stringToCheck;
     private string _lowerInputWord;
     private string _lowerStringToCheck;
+    private int _wordOccurance;
 
     public RepeatCounter(string input1, string input2)
     {
@@ -24,7 +25,29 @@ namespace Counter
 
     public int CounterRepeats()
     {
-      return 1;
+      if (ContainsWord())
+      {
+        for (int j = 0; j < _lowerStringToCheck.Length; j++)
+        {
+          if (_lowerStringToCheck[j] == _lowerInputWord[0])
+          {
+            if (IsMatch(_lowerInputWord, _lowerStringToCheck, j))
+            {
+              _wordOccurance++;
+            }
+          }
+        }
+      }
+      return _wordOccurance;
+    }
+
+    public bool IsMatch(string str1, string str2, int str2index)
+    {
+      bool match = true;
+      for (int i = 0; i < str1.Length; i++)
+        if (str1[i] != str2[str2index + i])
+          match = false;
+      return match;
     }
   }
 }
