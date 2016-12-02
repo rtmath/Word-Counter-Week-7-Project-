@@ -36,10 +36,10 @@ namespace TestingGrounds
     [InlineData("dodge","The Dodgers", 1)]
     [InlineData("cat","Cathy cannot keep all of her cats together in the cathedral", 3)]
     [InlineData("the", "The thing is, there are a lot...", 2)]
-    public void Test4_CheckOccurances_ReturnOccurances(string input1, string input2, int occurances)
+    public void Test4_CheckOccurences_ReturnOccurences(string input1, string input2, int occurences)
     {
       RepeatCounter testCounter = new RepeatCounter(input1, input2);
-      Assert.Equal(occurances, testCounter.CounterRepeats());
+      Assert.Equal(occurences, testCounter.CounterRepeats());
     }
   }
 }

@@ -3,7 +3,7 @@
 
 ## Description
 
-This is an exercise using Behavior Driven Development in C#.
+This is an exercise using Behavior Driven Development and Unit Testing in C#.
 
 This program will take two inputs from a user: a word and another word or sentence. It will determine how many times the first word appears in the other word or sentence, and display the result to the user.
 
