@@ -4,29 +4,29 @@ namespace Counter
 {
   public class RepeatCounter
   {
-    private string _inputWord;
-    private string _stringToCheck;
-    private string _lowerInputWord;
-    private string _lowerStringToCheck;
+    private string _word;
+    private string _string;
+    private string _lowerWord;
+    private string _lowerString;
     private int _wordOccurence;
 
-    public RepeatCounter(string input1, string input2)
+    public RepeatCounter(string inputtedWord, string inputtedString)
     {
-      _inputWord = input1;
-      _lowerInputWord = input1.ToLower();
-      _stringToCheck = input2;
-      _lowerStringToCheck = input2.ToLower();
+      _word = inputtedWord;
+      _lowerWord = inputtedWord.ToLower();
+      _string = inputtedString;
+      _lowerString = inputtedString.ToLower();
       CountRepeats();
     }
 
     public string GetWord()
     {
-      return _inputWord;
+      return _word;
     }
 
     public string GetString()
     {
-      return _stringToCheck;
+      return _string;
     }
 
     public int GetOccurences()
@@ -36,18 +36,21 @@ namespace Counter
 
     public bool StringContainsWord()
     {
-      return _lowerStringToCheck.Contains(_lowerInputWord);
+      return _lowerString.Contains(_lowerWord);
     }
 
     public void CountRepeats()
     {
       if (StringContainsWord())
       {
-        for (int j = 0; j < _lowerStringToCheck.Length; j++)
+        for (int j = 0; j < _lowerString.Length; j++)
         {
-          if (_lowerStringToCheck[j] == _lowerInputWord[0] && j <= (_lowerStringToCheck.Length - _lowerInputWord.Length))
+          // For each letter in String, if that letter is the same as the first letter in Word,
+          // and if (j index plus Word.length) will not be an out of bounds index in String
+          if (_lowerString[j] == _lowerWord[0] && j <= (_lowerString.Length - _lowerWord.Length))
           {
-            if (IsMatch(_lowerInputWord, _lowerStringToCheck, j))
+            // Check if the substring at that index matches the inputted word
+            if (IsMatch(_lowerWord, _lowerString, j))
             {
               _wordOccurence++;
             }
@@ -56,12 +59,12 @@ namespace Counter
       }
     }
 
-    public bool IsMatch(string str1, string str2, int str2index)
+    public bool IsMatch(string word, string inputtedString, int inputtedStringIndex)
     {
       bool match = true;
-      for (int i = 0; i < str1.Length; i++)
+      for (int i = 0; i < word.Length; i++)
       {
-        if (str1[i] != str2[str2index + i])
+        if (word[i] != inputtedString[inputtedStringIndex + i])
         {
           match = false;
         }

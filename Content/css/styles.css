@@ -1,0 +1,36 @@
+body {
+  background-color: black;
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.centered {
+  text-align: center;
+}
+
+.well {
+  background-color: rgba(25, 30, 25, 0.9);
+  border-color: white;
+  color: rgb(200, 200, 200);
+}
+
+#header {
+  margin-top: 10vh;
+}
+
+button {
+  margin-top: 10px;
+  background-color: black;
+  color: rgb(200, 200, 200);
+  border-color: rgb(200, 200, 200);
+}
+
+input {
+  background-color: black;
+  color: rgb(200, 200, 200);
+}
+
+label {
+  margin-top: 10px;
+}
