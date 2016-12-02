@@ -39,13 +39,13 @@ namespace Counter
       return _lowerStringToCheck.Contains(_lowerInputWord);
     }
 
-    public int CountRepeats()
+    public void CountRepeats()
     {
       if (StringContainsWord())
       {
         for (int j = 0; j < _lowerStringToCheck.Length; j++)
         {
-          if (_lowerStringToCheck[j] == _lowerInputWord[0])
+          if (_lowerStringToCheck[j] == _lowerInputWord[0] && j <= (_lowerStringToCheck.Length - _lowerInputWord.Length))
           {
             if (IsMatch(_lowerInputWord, _lowerStringToCheck, j))
             {
@@ -54,15 +54,18 @@ namespace Counter
           }
         }
       }
-      return _wordOccurence;
     }
 
     public bool IsMatch(string str1, string str2, int str2index)
     {
       bool match = true;
-      for (int i = 0; i < str1.Length && i <str2.Length; i++)
+      for (int i = 0; i < str1.Length; i++)
+      {
         if (str1[i] != str2[str2index + i])
+        {
           match = false;
+        }
+      }
       return match;
     }
   }

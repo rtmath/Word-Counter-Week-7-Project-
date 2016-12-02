@@ -29,9 +29,10 @@ namespace TestingGrounds
     public void Test3_WordContainsWithDifferentCases_True(string input1, string input2)
     {
       RepeatCounter testCounter = new RepeatCounter(input1, input2);
-      Assert.Equal(true, testCounter.StringContainsWord());
+      Assert.Equal(true, testCounter.GetOccurences() == 1);
     }
 
+    //Test for third spec
     [Theory]
     [InlineData("dodge","The Dodgers", 1)]
     [InlineData("cat","Cathy cannot keep all of her cats together in the cathedral", 3)]
@@ -39,7 +40,7 @@ namespace TestingGrounds
     public void Test4_CheckOccurences_ReturnOccurences(string input1, string input2, int occurences)
     {
       RepeatCounter testCounter = new RepeatCounter(input1, input2);
-      Assert.Equal(occurences, testCounter.CountRepeats());
+      Assert.Equal(occurences, testCounter.GetOccurences());
     }
   }
 }
