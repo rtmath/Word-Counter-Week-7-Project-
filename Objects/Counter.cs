@@ -34,6 +34,11 @@ namespace Counter
       return _wordOccurence;
     }
 
+    public bool WordEqualsString()
+    {
+      return _word == _string;
+    }
+
     public bool StringContainsWord()
     {
       return _lowerString.Contains(_lowerWord);
