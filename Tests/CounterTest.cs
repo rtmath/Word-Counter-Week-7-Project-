@@ -1,9 +1,9 @@
 using Xunit;
-using Counter;
+using WordCounter.Objects;
 
-namespace TestingGrounds
+namespace WordCounter.Tests
 {
-  public class Tests
+  public class RepeatCounterTest
   {
     //Tests for first spec
     [Fact]
@@ -19,7 +19,7 @@ namespace TestingGrounds
       RepeatCounter testCounter = new RepeatCounter("a", "b");
       Assert.Equal(false, testCounter.WordEqualsString());
     }
-    
+
     //Tests for second spec
     [Fact]
     public void Test3_WordContains_True()
